@@ -1,0 +1,13 @@
+{% load static %}
+<link rel='stylesheet' href='{% static "main.css" %}'>
+
+<!-- <a href='edit/{{ticket.id}}Edit'></a> -->
+<a href='/Edit/'><button>Edit</button>Edit Ticket</a>
+
+<h1>Edit Ticket</h1>
+
+    <form action=''method='post'>      
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Submit'>
+</form>

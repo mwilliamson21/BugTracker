@@ -1,0 +1,23 @@
+<a href='/'>Homepage</a>
+<a href='/login/'><button>Login</button></a>
+<a href='/Logout/'><button>Logout</button></a>
+<a href='/createticketform/'>Create ticket form</a>
+
+
+<h1>Ticket information</h1>
+
+<ul>
+    {% for data in ticket %}
+        
+            <h3>{{ data.title }}</h3>
+             
+            <h2> {{ data.description }}</h2>
+            <h3> {{ data.ticket_status }}</h3>
+            <h3> {{ data.created_by }}</h3>
+            <h3> {{ data.assigned_by }}</h3>
+            <h3> {{ data.completed_by }}</h3>
+            <h4> {{ data.post_date }}</h4>
+
+            {% endfor %}
+    </ul>
+    

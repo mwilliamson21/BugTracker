@@ -1,0 +1,73 @@
+
+<a href='/createticketform/'>Create Ticket</a>
+<!-- <a href='/register/'>Register User</a> -->
+<a href='/login/'>Login</a>
+<a href='/logout/'>Logout</a>
+
+<ul>
+    <p>THIS IS IN-PROGRESS
+    {% for data in in_progress %}
+    <a href= '/edit/{{data.id}}/'>Edit</a>
+    <a href='ticket/{{data.id}}'>View Ticket</a>  
+   <h3>title: {{data.title}}</h3>
+   <h3>description: {{data.description}}</h3>
+   <h3>status: {{data.status}}</h3>
+   <h3>filed by: {{data.filed_by}}</h3>
+   <h3>assigned to: {{data.assigned_by}}</h3>
+   <h3>completed by: {{data.completed_by}}</h3>
+   <h3>post date: {{data.post_date}}</h3>
+    {% endfor %}
+</ul>
+
+<ul>
+   {% for data in done %} 
+   <a href= '/edit/{{data.id}}/'>edit</a>
+     <a href='ticket/{{data.id}}'>view ticket</a>  
+    <h3>title: {{data.title}}</h3>
+    <h3>description: {{data.description}}</h3>
+    <h3>status: {{data.status}}</h3>
+    <h3>filed by: {{data.filed_by}}</h3>
+    <h3>assigned to: {{data.assigned_by}}</h3>
+    <h3>completed by: {{data.completed_by}}</h3>
+    <h3>post date: {{data.post_date}}</h3>
+    {% endfor %}
+
+</ul> 
+<ul>
+    {% for data in invalid %}
+    <a href= '/edit/{{data.id}}/'>edit</a>
+    <a href='ticket/{{data.id}}'>view ticket</a>  
+   <h3>title: {{data.title}}</h3>
+   <h3>description: {{data.description}}</h3>
+   <h3>status: {{data.status}}</h3>
+   <h3>filed by: {{data.filed_by}}</h3>
+   <h3>assigned by: {{data.assigned_by}}</h3>
+   <h3>completed by: {{data.completed_by}}</h3>
+   <h3>post date: {{data.post_date}}</h3>
+
+    {% endfor %}
+</ul>
+
+<ul>
+
+    {% for data in new %}
+     <a href= '/edit/{{data.id}}/'>Edit</a>
+     <a href='ticket/{{data.id}}'>View Ticket</a>  
+    <h1>{{data.title}}</h1>
+    <h3>{{data.description}}</h3>
+    <h3>{{data.status}}</h3>
+    <h3>{{data.filed_by}}</h3>
+    <h3>{{data.assigned_by}}</h3>
+    <h3>{{data.completed_by}}</h3>
+    <h3>{{data.post_date}}</h3>
+
+    {% endfor %}
+
+</ul>
+
+
+<form action=''method='post'>      
+{% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='Submit'>
+</form>
